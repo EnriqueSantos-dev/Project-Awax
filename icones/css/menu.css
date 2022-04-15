@@ -1,0 +1,32 @@
+
+.menu nav.active {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    height: calc(100vh - 100px);
+    width: 70vw;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 1;
+    display: block;
+}
+.menu nav.active ul , .menu nav.active ul li, 
+.menu nav.active ul li a {
+    height: auto;
+}
+.menu nav.active ul {
+    padding: 20px 0 0 100px;
+    align-items: flex-start;
+    flex-direction: column;
+    z-index: 10;
+    gap: 30px;
+}
+.menu nav.active ul li {
+    border: 0;
+}
+.menu nav.active ul li a{
+    font-size: 19px;
+}
+
+.menu nav.active ul li.active > a {
+    color: #b28756;
+}
