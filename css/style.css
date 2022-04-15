@@ -499,7 +499,6 @@ header {
     }
     .change-options ul {
         padding: 8px 15px;
-        justify-content: flex-start;
     }
     .change-options ul li {
         border-left: none;
