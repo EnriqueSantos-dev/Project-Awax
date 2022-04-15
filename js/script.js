@@ -31,6 +31,8 @@ document.querySelectorAll('.botoes-slider span').forEach(item => {
         containerSliderWidth.style.marginLeft = marginVal;
         e.target.classList.add('active');
         currentIndex = item.getAttribute('data-key');
+        clearInterval(sliderAuto);
+        sliderAuto = setInterval(nextSlider, 5000);
     });
 });
 
@@ -47,7 +49,8 @@ function nextSlider() {
     }
     document.querySelectorAll('.botoes-slider span')[currentIndex].classList.add('active');
 }
-setInterval(nextSlider, 5000);
+// Run slider auto
+let sliderAuto = setInterval(nextSlider, 5000);
 
 // Menu active
 let btnMobile = document.querySelector('.btn-mobile');
@@ -56,7 +59,7 @@ btnMobile.addEventListener('click', () => {
     menuNav.classList.toggle('active');
 });
 
-// Formando gallery
+// maker gallery
 let nodeCopy = document.querySelector('.photo');
 photosGallery[0].all.map((item, indexOf) => {
     let photoItem = document.querySelector('.photo').cloneNode(true);
@@ -65,7 +68,6 @@ photosGallery[0].all.map((item, indexOf) => {
     photoItem.querySelector('h5').innerHTML = 'about';
     photoItem.querySelector('p').innerHTML = item.descri;
 
-    // Adicionando todas as mudança feitas na pizzaItem para pizzaArea
     gallery.append(photoItem);
 });
 
@@ -86,7 +88,6 @@ menuChangePhotos.forEach(el => {
                     photoItem.querySelector('h5').innerHTML = 'about';
                     photoItem.querySelector('p').innerHTML = item.descri;
 
-                    // Adicionando todas as mudança feitas na pizzaItem para pizzaArea
                     gallery.append(photoItem);
                 });
                 break;
@@ -98,7 +99,6 @@ menuChangePhotos.forEach(el => {
                     photoItem.querySelector('h5').innerHTML = 'about';
                     photoItem.querySelector('p').innerHTML = item.descri;
 
-                    // Adicionando todas as mudança feitas na pizzaItem para pizzaArea
                     gallery.append(photoItem);
                 });
                 break;
@@ -110,7 +110,6 @@ menuChangePhotos.forEach(el => {
                     photoItem.querySelector('h5').innerHTML = 'about';
                     photoItem.querySelector('p').innerHTML = item.descri;
 
-                    // Adicionando todas as mudança feitas na pizzaItem para pizzaArea
                     gallery.append(photoItem);
                 });
                 break;
@@ -122,7 +121,6 @@ menuChangePhotos.forEach(el => {
                     photoItem.querySelector('h5').innerHTML = 'about';
                     photoItem.querySelector('p').innerHTML = item.descri;
 
-                    // Adicionando todas as mudança feitas na pizzaItem para pizzaArea
                     gallery.append(photoItem);
                 });
                 break;
@@ -134,7 +132,6 @@ menuChangePhotos.forEach(el => {
                     photoItem.querySelector('h5').innerHTML = 'about';
                     photoItem.querySelector('p').innerHTML = item.descri;
 
-                    // Adicionando todas as mudança feitas na pizzaItem para pizzaArea
                     gallery.append(photoItem);
                 });
                 break;
