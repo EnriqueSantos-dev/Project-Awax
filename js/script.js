@@ -153,3 +153,82 @@ buttonMoreProjects.addEventListener('click', () => {
     }
     gallery.classList.toggle('active');
 });
+
+// maker card team
+
+cardInfo.map((item, index) => {
+    let cardModel = document.querySelector('.content-cards').cloneNode(true);
+    cardModel.innerHTML = '';
+    cardModel.setAttribute('data-key', `${index}`);
+    console.log(cardModel);
+    if (index == 0) {
+        item.cards1.forEach(item => {
+            let card = document.querySelector('.cards-slider').cloneNode(true);
+            card.querySelector('img').src = item.img;
+            card.querySelector('h5').innerHTML = item.name;
+            card.querySelector('span').innerHTML = item.decri;
+            cardModel.append(card);
+            document.querySelector('.slider-width-team').appendChild(cardModel);
+        });
+    }
+    if (index == 1) {
+        item.cards2.forEach(item => {
+            let card = document.querySelector('.cards-slider').cloneNode(true);
+            card.querySelector('img').src = item.img;
+            card.querySelector('h5').innerHTML = item.name;
+            card.querySelector('span').innerHTML = item.decri;
+            cardModel.append(card);
+            document.querySelector('.slider-width-team').appendChild(cardModel);
+        });
+    }
+    if (index == 2) {
+        item.cards3.forEach(item => {
+            let card = document.querySelector('.cards-slider').cloneNode(true);
+            card.querySelector('img').src = item.img;
+            card.querySelector('h5').innerHTML = item.name;
+            card.querySelector('span').innerHTML = item.decri;
+            cardModel.append(card);
+            document.querySelector('.slider-width-team').appendChild(cardModel);
+        });
+    }
+});
+
+// dinamic quant span buttons card slider
+let lengthButton = document.querySelectorAll('.content-cards');
+for (let i = 0; i < lengthButton.length - 1; i++) {
+    let spanButton = document.createElement('span');
+    spanButton.setAttribute('data-slider', `${i}`);
+    if (i == 0) {
+        spanButton.classList.add('active');
+    }
+    document.querySelector('.button-slider-team').append(spanButton);
+}
+
+let cardContent = document.querySelector('.slider-width-team');
+document.querySelector('.slider-width-team').style.width = `${(lengthButton.length - 1) * 100}%`;
+let indexCard = 0;
+function nextSliderCard() {
+    document.querySelector('.button-slider-team span.active').classList.remove('active');
+    if (indexCard == lengthButton.length - 2) {
+        indexCard = 0;
+        cardContent.style.marginLeft = `${indexCard}`;
+    } else {
+        indexCard++;
+        cardContent.style.marginLeft = `-${indexCard * 100}%`;
+    }
+    document.querySelectorAll('.button-slider-team span')[indexCard].classList.add('active');
+}
+let cardAuto = setInterval(nextSliderCard, 7000);
+
+// manul slider card 
+document.querySelectorAll('.button-slider-team span').forEach(item => {
+    item.addEventListener('click', e => {
+        document.querySelector('.button-slider-team span.active').classList.remove('active');
+        let marginValCard = `-${item.getAttribute('data-slider') * 100}%`;
+        cardContent.style.marginLeft = marginValCard;
+        e.target.classList.add('active');
+        indexCard = item.getAttribute('data-slider');
+        clearInterval(cardAuto);
+        cardAuto = setInterval(nextSliderCard, 7000);
+    });
+});

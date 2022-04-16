@@ -349,6 +349,7 @@ header {
     height: 430px;
     max-height: 500px;
     border-radius: 10px;
+    cursor: grab;
 }
 
 .photo-hover {
@@ -396,7 +397,123 @@ header {
 .more-projects button:hover {
     opacity: 0.8;
 }
-
+/* section our team */
+#our-team {
+    background-image: url('/complementos/bgOurTeam.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+.backdrop-our-team {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: inherit;
+    position: relative;
+    padding-bottom: 30px;
+}
+.container-center.sections.our-team {
+    overflow-x: hidden;
+}
+.slider-content-our-team {
+    width: 100%;
+}
+.slider-team {
+    padding-bottom: 20px;
+}
+.slider-width-team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
+}
+.model-card {
+    display: none;
+}
+.content-cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+.cards-slider {
+    flex: 1;
+    gap: 20px;
+    width: 100%;
+    max-width: 320px;
+    background-color: #f7f7f7;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+.img-cards {
+    border-radius: 50%;
+    text-align: center;
+    width: 184px;
+    margin:  0 auto;
+}
+.img-cards img {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.card-team-default {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 30px 0;
+}
+.socias-team {
+    margin: 0 auto;
+    width: fit-content;
+}
+.socias-team ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.socias-team ul li {
+    background-color:#999;
+    border-radius: 50%;
+    padding: 5px;
+    text-align: center;
+}
+.socias-team ul li a {
+    display: block;
+    cursor: pointer;
+    padding: 5px;
+}
+.socias-team ul li a i {
+    font-size: 24px;
+    color: #fff;
+}
+.button-slider-team {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    gap: 10px;
+}
+.button-slider-team span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border:  solid 3px #b28756;
+    cursor: pointer;
+}
+.button-slider-team span.active {
+    background-color: #b28756;
+}
 @media (max-width: 1140px) {
     .container-center.header {
         padding: 0 20px;
