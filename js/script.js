@@ -220,11 +220,11 @@ function nextSliderCard() {
 }
 let cardAuto = setInterval(nextSliderCard, 7000);
 
-// manul slider card 
+// manul slider card
 document.querySelectorAll('.button-slider-team span').forEach(item => {
     item.addEventListener('click', e => {
         document.querySelector('.button-slider-team span.active').classList.remove('active');
-        let marginValCard = `-${(item.getAttribute('data-slider') * 100)}%`;
+        let marginValCard = `-${item.getAttribute('data-slider') * 100}%`;
         cardContent.style.marginLeft = marginValCard;
         e.target.classList.add('active');
         indexCard = item.getAttribute('data-slider');
@@ -234,4 +234,4 @@ document.querySelectorAll('.button-slider-team span').forEach(item => {
 });
 
 let content = document.querySelector('.content-cards[data-key="1"]');
-console.log(content)
+console.log(content);

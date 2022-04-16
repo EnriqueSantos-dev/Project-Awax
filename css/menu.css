@@ -1,15 +1,15 @@
-
 .menu nav.active {
     position: absolute;
-    top: 100px;
+    top: 80px;
     right: 0;
     height: calc(100vh - 80px);
     width: 70vw;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 1;
     display: block;
 }
-.menu nav.active ul , .menu nav.active ul li, 
+.menu nav.active ul,
+.menu nav.active ul li,
 .menu nav.active ul li a {
     height: auto;
 }
@@ -23,7 +23,7 @@
 .menu nav.active ul li {
     border: 0;
 }
-.menu nav.active ul li a{
+.menu nav.active ul li a {
     font-size: 19px;
 }
 
