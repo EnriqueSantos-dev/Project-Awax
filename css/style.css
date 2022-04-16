@@ -50,7 +50,7 @@ body {
     background-color: #f7f7f7;
 }
 header {
-    height: 100px;
+    height: 80px;
     background-color: #000;
     font-weight: 600;
 }
@@ -118,7 +118,7 @@ header {
 
 /* section slider */
 .slider-main {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 80px);
     background-image: url('/complementos/bg.jpg');
     background-size: cover;
     background-position: center;
@@ -424,16 +424,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    -webkit-transition: all .6s ease-in-out;
-    transition: all .6s ease-in-out;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
 }
 .model-card {
     display: none;
 }
 .content-cards {
+    flex: 1;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 30px;
     flex-wrap: wrap;
@@ -442,18 +443,18 @@ header {
 .cards-slider {
     flex: 1;
     gap: 20px;
-    width: 100%;
     max-width: 320px;
     background-color: #f7f7f7;
     padding: 50px 20px;
     border-radius: 10px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
 }
+
 .img-cards {
     border-radius: 50%;
     text-align: center;
     width: 184px;
-    margin:  0 auto;
+    margin: 0 auto;
 }
 .img-cards img {
     max-width: 100%;
@@ -468,6 +469,17 @@ header {
     gap: 10px;
     padding: 30px 0;
 }
+.card-team-default h5 {
+    font-size: 17px;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.card-team-default span {
+    text-transform: capitalize;
+    color: #333;
+    font-size: 14px;
+}
 .socias-team {
     margin: 0 auto;
     width: fit-content;
@@ -479,7 +491,7 @@ header {
     gap: 5px;
 }
 .socias-team ul li {
-    background-color:#999;
+    background-color: #999;
     border-radius: 50%;
     padding: 5px;
     text-align: center;
@@ -508,18 +520,20 @@ header {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border:  solid 3px #b28756;
+    border: solid 3px #b28756;
     cursor: pointer;
 }
 .button-slider-team span.active {
     background-color: #b28756;
 }
+
 @media (max-width: 1140px) {
     .container-center.header {
+        max-width: 1000px;
         padding: 0 20px;
     }
     .container-center.sections {
-        padding: 50px 20px;
+        max-width: 1000px;
     }
     .cards-services {
         gap: 20px;
@@ -527,12 +541,6 @@ header {
     .cards-services > .card-card--services {
         border-left: solid 1px #b28756;
         border-right: solid 1px #b28756;
-    }
-    .container-center.about {
-        padding: 50px 20px;
-    }
-    .container-center.cards {
-        padding: 50px 20px;
     }
     .container-center.header {
         padding: 0 20px;
@@ -546,6 +554,9 @@ header {
     .menu nav ul li a {
         padding: 5px;
         font-size: 12px;
+    }
+    .container-center.sections {
+        padding: 50px 20px;
     }
 }
 @media (max-width: 870px) {
@@ -623,6 +634,19 @@ header {
     }
     .change-options ul li.active {
         border-bottom-color: #c58944;
+    }
+
+    .cards-slider {
+        max-width: 280px;
+    }
+    .cards-slider {
+        padding: 50px 5px;
+    }
+    .socias-team ul li {
+        padding: 1px 2px;
+    }
+    .socias-team ul li a i {
+        font-size: 20px;
     }
 }
 

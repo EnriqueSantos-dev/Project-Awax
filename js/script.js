@@ -166,7 +166,7 @@ cardInfo.map((item, index) => {
             let card = document.querySelector('.cards-slider').cloneNode(true);
             card.querySelector('img').src = item.img;
             card.querySelector('h5').innerHTML = item.name;
-            card.querySelector('span').innerHTML = item.decri;
+            card.querySelector('span').innerHTML = item.descri;
             cardModel.append(card);
             document.querySelector('.slider-width-team').appendChild(cardModel);
         });
@@ -176,7 +176,7 @@ cardInfo.map((item, index) => {
             let card = document.querySelector('.cards-slider').cloneNode(true);
             card.querySelector('img').src = item.img;
             card.querySelector('h5').innerHTML = item.name;
-            card.querySelector('span').innerHTML = item.decri;
+            card.querySelector('span').innerHTML = item.descri;
             cardModel.append(card);
             document.querySelector('.slider-width-team').appendChild(cardModel);
         });
@@ -186,7 +186,7 @@ cardInfo.map((item, index) => {
             let card = document.querySelector('.cards-slider').cloneNode(true);
             card.querySelector('img').src = item.img;
             card.querySelector('h5').innerHTML = item.name;
-            card.querySelector('span').innerHTML = item.decri;
+            card.querySelector('span').innerHTML = item.descri;
             cardModel.append(card);
             document.querySelector('.slider-width-team').appendChild(cardModel);
         });
@@ -224,7 +224,7 @@ let cardAuto = setInterval(nextSliderCard, 7000);
 document.querySelectorAll('.button-slider-team span').forEach(item => {
     item.addEventListener('click', e => {
         document.querySelector('.button-slider-team span.active').classList.remove('active');
-        let marginValCard = `-${item.getAttribute('data-slider') * 100}%`;
+        let marginValCard = `-${(item.getAttribute('data-slider') * 100)}%`;
         cardContent.style.marginLeft = marginValCard;
         e.target.classList.add('active');
         indexCard = item.getAttribute('data-slider');
@@ -232,3 +232,6 @@ document.querySelectorAll('.button-slider-team span').forEach(item => {
         cardAuto = setInterval(nextSliderCard, 7000);
     });
 });
+
+let content = document.querySelector('.content-cards[data-key="1"]');
+console.log(content)
