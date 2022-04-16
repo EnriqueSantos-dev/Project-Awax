@@ -597,6 +597,9 @@ header {
 }
 
 @media (max-width: 600px) and (min-width: 300px) {
+    .botoes-slider {
+        bottom: 100px;
+    }
     .menu nav.active ul {
         gap: 18px;
     }
