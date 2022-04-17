@@ -1,7 +1,8 @@
 let containerSliderWidth = document.querySelector('.slider-width'),
     quantSliders = document.querySelectorAll('.slider'),
     sliderBottunBox = document.querySelector('.botoes-slider'),
-    modelSpanButton = document.querySelectorAll('.botoes-slider span'),
+    boxButtunCard = document.querySelector('.button-slider-team'),
+    containerSliderWidthCard = document.querySelector('.slider-width-team'),
     menuNav = document.querySelector('.menu nav'),
     menuLi = document.querySelectorAll('.menu nav ul li'),
     menuLinkActive = document.querySelectorAll('.menu nav ul li a'),
@@ -16,12 +17,24 @@ menuLinkActive.forEach((item, index) => {
 });
 
 // widht dinamic container sliders and buttons dinamic insert
-containerSliderWidth.style.width = `${quantSliders.length * 100}vw`;
-for (let i = 1; i < quantSliders.length; i++) {
-    let span = document.createElement('span');
-    span.setAttribute(`data-key`, `${i}`);
-    sliderBottunBox.append(span);
+function insertWidthContent(conatiner, lenghtSliders, unity) {
+    conatiner.style.width = `${lenghtSliders * 100}${unity}`;
 }
+
+function InsertButtonSpans(lenghtItemsContainer, parentElement) {
+    for (let i = 0; i < lenghtItemsContainer; i++) {
+        let span = document.createElement('span');
+        span.classList.add('default-button-slider');
+        span.setAttribute(`data-key`, `${i}`);
+        if (i == 0) {
+            span.classList.add('active');
+        }
+        parentElement.append(span);
+    }
+}
+
+insertWidthContent(containerSliderWidth, quantSliders.length, 'vw');
+InsertButtonSpans(quantSliders.length, sliderBottunBox);
 
 // next and prev slider function
 document.querySelectorAll('.botoes-slider span').forEach(item => {
@@ -160,7 +173,6 @@ cardInfo.map((item, index) => {
     let cardModel = document.querySelector('.content-cards').cloneNode(true);
     cardModel.innerHTML = '';
     cardModel.setAttribute('data-key', `${index}`);
-    console.log(cardModel);
     if (index == 0) {
         item.cards1.forEach(item => {
             let card = document.querySelector('.cards-slider').cloneNode(true);
@@ -194,27 +206,21 @@ cardInfo.map((item, index) => {
 });
 
 // dinamic quant span buttons card slider
-let lengthButton = document.querySelectorAll('.content-cards');
-for (let i = 0; i < lengthButton.length - 1; i++) {
-    let spanButton = document.createElement('span');
-    spanButton.setAttribute('data-slider', `${i}`);
-    if (i == 0) {
-        spanButton.classList.add('active');
-    }
-    document.querySelector('.button-slider-team').append(spanButton);
-}
+let lenghtCards = document.querySelectorAll('.content-cards'),
+    containerCardWidth = document.querySelector('.slider-width-team');
 
-let cardContent = document.querySelector('.slider-width-team');
-document.querySelector('.slider-width-team').style.width = `${(lengthButton.length - 1) * 100}%`;
+insertWidthContent(containerCardWidth, `${lenghtCards.length - 1}`, '%');
+InsertButtonSpans(lenghtCards.length - 1, boxButtunCard);
+
 let indexCard = 0;
 function nextSliderCard() {
     document.querySelector('.button-slider-team span.active').classList.remove('active');
-    if (indexCard == lengthButton.length - 2) {
+    if (indexCard == lenghtCards.length - 2) {
         indexCard = 0;
-        cardContent.style.marginLeft = `${indexCard}`;
+        containerCardWidth.style.marginLeft = `${indexCard}`;
     } else {
         indexCard++;
-        cardContent.style.marginLeft = `-${indexCard * 100}%`;
+        containerCardWidth.style.marginLeft = `-${indexCard * 100}%`;
     }
     document.querySelectorAll('.button-slider-team span')[indexCard].classList.add('active');
 }
@@ -224,14 +230,11 @@ let cardAuto = setInterval(nextSliderCard, 7000);
 document.querySelectorAll('.button-slider-team span').forEach(item => {
     item.addEventListener('click', e => {
         document.querySelector('.button-slider-team span.active').classList.remove('active');
-        let marginValCard = `-${item.getAttribute('data-slider') * 100}%`;
-        cardContent.style.marginLeft = marginValCard;
+        let marginValCard = `-${item.getAttribute('data-key') * 100}%`;
+        containerCardWidth.style.marginLeft = marginValCard;
         e.target.classList.add('active');
-        indexCard = item.getAttribute('data-slider');
+        indexCard = item.getAttribute('data-key');
         clearInterval(cardAuto);
         cardAuto = setInterval(nextSliderCard, 7000);
     });
 });
-
-let content = document.querySelector('.content-cards[data-key="1"]');
-console.log(content);

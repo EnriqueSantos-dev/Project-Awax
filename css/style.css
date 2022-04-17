@@ -28,7 +28,10 @@ body {
     display: block;
     margin-top: 10px;
     font-weight: 600;
-    font-size: 10px;
+    font-size: 12px;
+    color: #555;
+}
+.section-default-tittle span.bg-drop {
     color: #ccc;
 }
 .container-center {
@@ -48,6 +51,17 @@ body {
 }
 .light-section {
     background-color: #f7f7f7;
+}
+span.default-button-slider {
+    display: block;
+    border: solid 3px #b28756;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+span.default-button-slider.active {
+    background-color: #b28756;
 }
 header {
     height: 80px;
@@ -185,16 +199,7 @@ header {
     bottom: 50px;
     gap: 10px;
 }
-.botoes-slider span {
-    border: solid 3px #b28756;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-.botoes-slider span.active {
-    background-color: #b28756;
-}
+
 
 .btn-mobile {
     display: none;
@@ -515,17 +520,7 @@ header {
     bottom: 0px;
     gap: 10px;
 }
-.button-slider-team span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: solid 3px #b28756;
-    cursor: pointer;
-}
-.button-slider-team span.active {
-    background-color: #b28756;
-}
+
 
 @media (max-width: 1140px) {
     .container-center.header {
