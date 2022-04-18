@@ -2,6 +2,7 @@ let containerSliderWidth = document.querySelector('.slider-width'),
   quantSliders = document.querySelectorAll('.slider'),
   sliderBottunBox = document.querySelector('.botoes-slider'),
   boxButtunCard = document.querySelector('.button-slider-team'),
+  boxButtunHappy = document.querySelector('.button-box-happy-clients')
   containerSliderWidthCard = document.querySelector('.slider-width-team'),
   menuNav = document.querySelector('.menu nav'),
   menuLi = document.querySelectorAll('.menu nav ul li'),
@@ -238,3 +239,45 @@ document.querySelectorAll('.button-slider-team span').forEach(item => {
     cardAuto = setInterval(nextSliderCard, 7000);
   });
 });
+
+// happy client
+let containerWidthHappy = document.querySelector('.slider-width-happy');
+cardInfo[0].cards1.forEach((item, index) => {
+  let cloneModelSliderHappy = document.querySelector('.content-happy-slider').cloneNode(true);
+  cloneModelSliderHappy.querySelector('img').src = item.img;
+  cloneModelSliderHappy.querySelector('h5').innerHTML = item.name;
+  cloneModelSliderHappy.querySelector('span').innerHTML = item.descri;
+  document.querySelector('.slider-width-happy').append(cloneModelSliderHappy);
+});
+
+let lenghtSlidersHappy = document.querySelectorAll('.content-happy-slider');
+insertWidthContent(containerWidthHappy, lenghtSlidersHappy.length - 1,'%');
+InsertButtonSpans(lenghtSlidersHappy.length - 1, boxButtunHappy )
+
+// manual slider happy
+document.querySelectorAll('.button-box-happy-clients span').forEach(item => {
+  item.addEventListener('click', e => {
+    document.querySelector('.button-box-happy-clients span.active').classList.remove('active');
+    let marginValCard = `-${item.getAttribute('data-key') * 100}%`;
+    containerWidthHappy.style.marginLeft = marginValCard;
+    e.target.classList.add('active');
+    indexCurrentHappy = item.getAttribute('data-key');
+    clearInterval(happyAuto);
+    happyAuto = setInterval(nextSliderHappy, 7000);
+  });
+});
+
+// dinamic slider happy
+let indexCurrentHappy = 0;
+function nextSliderHappy() {
+  document.querySelector('.button-box-happy-clients span.active').classList.remove('active');
+  if (indexCurrentHappy == lenghtSlidersHappy.length - 2) {
+    indexCurrentHappy = 0;
+    containerWidthHappy.style.marginLeft = `${indexCurrentHappy}`;
+  } else {
+    indexCurrentHappy++;
+    containerWidthHappy.style.marginLeft = `-${indexCurrentHappy * 100}%`;
+  }
+  document.querySelectorAll('.button-box-happy-clients span')[indexCurrentHappy].classList.add('active');
+}
+let happyAuto = setInterval(nextSliderHappy, 7000);
