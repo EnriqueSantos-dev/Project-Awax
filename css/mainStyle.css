@@ -102,6 +102,8 @@ header {
 	font-weight: 600;
 	width: 100%;
 	z-index: 1;
+	top: 0;
+	transition: all 0.4s ease-in-out;
 }
 .container-center.header {
 	display: flex;
@@ -183,7 +185,7 @@ header {
 .slider-width,
 .slider {
 	width: 100%;
-	height: inherit;
+	height: 100%;
 }
 .slider-width {
 	display: flex;

@@ -12,9 +12,9 @@ let containerSliderWidth = document.querySelector('.slider-width'),
 
 // efeito no header
 window.addEventListener('scroll', () => {
-	if (window.scrollY > 0) {
+	if (window.scrollY > 5) {
 		document.querySelector('header').style.position = 'fixed';
-		document.querySelector('header').style.backgroundColor = 'rgba(0,0,0,0.95)';
+		document.querySelector('header').style.backgroundColor = 'rgba(0,0,0,0.9)';
 	} else {
 		document.querySelector('header').style.position = 'static';
 		document.querySelector('header').style.backgroundColor = '#000';
