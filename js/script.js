@@ -290,6 +290,7 @@ let happyAuto = setInterval(nextSliderHappy, 7000);
 let indexCurrentProductsType = 0,
 	lenghtSlidersProductsType = document.querySelectorAll('.content-slider-product-type').length;
 
+// dinamic slider product type
 function sliderAutoProductType() {
 	document.querySelector('.bottons-box-price-products span.active').classList.remove('active');
 	if (indexCurrentProductsType == lenghtSlidersProductsType - 1) {
