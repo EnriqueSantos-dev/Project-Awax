@@ -10,6 +10,16 @@ let containerSliderWidth = document.querySelector('.slider-width'),
 	menuLinkActive = document.querySelectorAll('.menu nav ul li a'),
 	gallery = document.querySelector('.grid-gallery--pics');
 
+// efeito no header
+window.addEventListener('scroll', () => {
+	if (window.scrollY > 0) {
+		document.querySelector('header').style.position = 'fixed';
+		document.querySelector('header').style.backgroundColor = 'rgba(0,0,0,0.95)';
+	} else {
+		document.querySelector('header').style.position = 'static';
+		document.querySelector('header').style.backgroundColor = '#000';
+	}
+});
 // menu active
 menuLinkActive.forEach((item, index) => {
 	item.addEventListener('click', () => {
