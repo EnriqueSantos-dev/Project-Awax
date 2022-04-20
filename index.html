@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" translate="no">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="/css/mainStyle.css" />
 		<!-- icons link  -->
 		<link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+		<!-- fav icon  -->
+		<link rel="shortcut icon" href="/complementos/logo.svg" type="image/x-icon" />
 		<title>Awax</title>
 	</head>
 	<body>
@@ -75,7 +77,9 @@
 		</div>
 		<header>
 			<div class="container-center header">
-				<div class="logo"></div>
+				<div class="logo">
+					<img src="/complementos/logo.svg" alt="" />
+				</div>
 				<div class="menu">
 					<div class="btn-mobile">
 						<div class="btn-line--3"></div>
@@ -547,7 +551,87 @@
 				<a href="#">get in touch</a>
 			</div>
 		</section>
-
+		<section id="some-facts" class="dark-section">
+			<div class="container-center sections">
+				<div class="section-default-tittle">
+					<h2 class="light">some facts</h2>
+					<span>about our work</span>
+				</div>
+				<div class="about-work">
+					<div class="about-card-word">
+						<h3>1000</h3>
+						<h4>design projects released</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+					</div>
+					<div class="about-card-word">
+						<h3>900</h3>
+						<h4>photos</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+					</div>
+					<div class="about-card-word">
+						<h3>500</h3>
+						<h4>maketing ideas</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+					</div>
+					<div class="about-card-word">
+						<h3>100</h3>
+						<h4>exhibitions</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+					</div>
+				</div>
+			</div>
+			<div class="contact-icons-about-work">
+				<div class="tell-about">
+					<i class="bx bx-share-alt" style="color: #aaaaaa"></i>
+					<span>TELL ABOUT US.</span>
+				</div>
+				<div class="icons-contact-about">
+					<div>
+						<i class="bx bxl-twitter" style="color: #ffffff"></i>
+						<span>152</span>
+					</div>
+					<div>
+						<i class="bx bxl-linkedin" style="color: #ffffff"></i>
+						<span>31</span>
+					</div>
+					<div>
+						<i class="bx bxl-facebook" style="color: #ffffff"></i>
+						<span>163</span>
+					</div>
+					<div>
+						<i class="bx bxl-google-plus" style="color: #ffffff"></i>
+						<span>22</span>
+					</div>
+					<div>
+						<i class="bx bxl-pinterest-alt" style="color: #ffffff"></i>
+						<span>145</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="contact-us" class="light-section">
+			<div class="container-center sections">
+				<div class="section-default-tittle">
+					<h2 class="dark">contact us</h2>
+					<span>about our work</span>
+				</div>
+				<div class="form-page">
+					<form method="post" id="formValidar">
+						<div class="input-name-email">
+							<input type="text" placeholder="Name" name="name" />
+							<input type="text" placeholder="Email" name="email" />
+						</div>
+						<div class="subject">
+							<input type="text" name="subject" placeholder="Subject" />
+						</div>
+						<div class="message">
+							<input type="text" name="message" placeholder="Message"></input>
+						</div>
+						<input type="submit" value="Send message" />
+					</form>
+				</div>
+			</div>
+		</section>
 		<script type="text/javascript" src="/js/photosJson.js"></script>
 		<script type="text/javascript" src="/js/cardTeam.js"></script>
 		<script type="text/javascript" src="/js/script.js"></script>

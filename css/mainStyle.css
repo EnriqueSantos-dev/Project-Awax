@@ -2,7 +2,9 @@
 @import url('/css/btn-mobile.css');
 @import url('/css/menu.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
-
+html {
+	scroll-behavior: smooth;
+}
 body {
 	font-family: 'Montserrat', sans-serif;
 }
@@ -68,8 +70,8 @@ body {
 span.default-button-slider {
 	display: block;
 	border: solid 3px #b28756;
-	width: 20px;
-	height: 20px;
+	width: 19px;
+	height: 19px;
 	border-radius: 50%;
 	cursor: pointer;
 }
@@ -97,23 +99,27 @@ span.default-button-slider.active {
 /* finish default configs elements */
 
 header {
-	height: 80px;
+	height: 100px;
 	background-color: #000;
 	font-weight: 600;
 	width: 100%;
 	z-index: 1;
 	top: 0;
-	transition: all 0.4s ease-in-out;
+	transition: all 0.8s ease-out;
 }
 .container-center.header {
 	display: flex;
 	align-items: center;
 }
 .logo {
-	width: 50px;
-	height: 50px;
-	background-color: #b28756;
-	border-radius: 50%;
+	width: 80px;
+	height: auto;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+.logo img {
+	width: 80%;
 }
 .menu {
 	height: 100%;
@@ -170,14 +176,14 @@ header {
 
 /* section slider */
 .slider-main {
-	height: calc(100vh - 80px);
+	height: calc(100vh - 100px);
 	background-image: url('/complementos/bg.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
 }
 .bg-darkness-slider-main {
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.7);
 	overflow: hidden;
 	position: relative;
 }
@@ -301,21 +307,22 @@ header {
 	height: 180px;
 	text-align: center;
 	color: #fff;
-	border-left: solid 1px #b28756;
+	border-left: solid 1px #555;
 	padding: 10px 30px;
 }
 .card-card--services:last-child {
-	border-right: solid 1px #b28756;
+	border-right: solid 1px #555;
 }
 .card-card--services h3 {
 	font-size: 16px;
 	text-transform: uppercase;
+	line-height: 20px;
 	color: #fff;
 	font-weight: 600;
 }
 .card-card--services p {
 	font-size: 14px;
-	color: #ccc;
+	color: #777;
 }
 /* section our projects */
 .change-options {
@@ -372,15 +379,13 @@ header {
 }
 .grid-gallery--pics .photo {
 	position: relative;
-	max-width: 100%;
-	width: 100%;
+	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-position: center;
 	background-size: cover;
 	height: 430px;
-	max-height: 500px;
 	border-radius: 10px;
 	cursor: grab;
 }
@@ -426,6 +431,7 @@ header {
 	font-weight: 600;
 	text-transform: uppercase;
 	cursor: pointer;
+	outline: none;
 }
 .more-projects button:hover {
 	opacity: 0.8;
@@ -528,7 +534,6 @@ header {
 	color: #fff;
 }
 .button-slider-team {
-	margin: 0 auto;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -536,6 +541,7 @@ header {
 	position: absolute;
 	bottom: 0px;
 	gap: 10px;
+	left: 0;
 }
 /* happy clients */
 .model-happy {
@@ -750,24 +756,150 @@ header {
 	cursor: pointer;
 	font-weight: 600;
 }
+
+/* section some-facts */
+.about-work {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+.about-work .about-card-word {
+	flex: 1;
+	color: #b28756;
+	padding: 30px 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	text-align: center;
+}
+.about-card-word h3 {
+	font-size: 40px;
+	font-weight: bold;
+}
+.about-card-word h4::before {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 3px;
+	background-color: #555;
+	top: 0;
+	margin: 0 auto 6px auto;
+}
+.about-card-word h4 {
+	text-transform: uppercase;
+	font-size: 17px;
+	color: #fff;
+	font-weight: 600;
+	line-height: 20px;
+}
+.about-card-word p {
+	font-size: 13px;
+	color: #555;
+	margin-top: 12px;
+}
+.contact-icons-about-work {
+	background-color: #fff;
+	padding: 15px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	border-bottom: solid 2px #ccc;
+	flex-wrap: wrap;
+}
+.contact-icons-about-work div {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.contact-icons-about-work div:not(:first-child) i {
+	padding: 8px;
+	border-radius: 50%;
+}
+.contact-icons-about-work .tell-about i {
+	font-size: 30px;
+}
+.tell-about span {
+	font-size: 15px;
+	color: #888;
+	font-weight: 600;
+}
+
+.icons-contact-about div:nth-child(1) i {
+	background-color: #2ec2ee;
+}
+.icons-contact-about div:nth-child(2) i {
+	background-color: #127fb3;
+}
+.icons-contact-about div:nth-child(3) i {
+	background-color: #37608d;
+}
+.icons-contact-about div:nth-child(4) i {
+	background-color: #e8453e;
+}
+.icons-contact-about div:nth-child(5) i {
+	background-color: #ba1c24;
+}
+.icons-contact-about > div > span {
+	color: #aaa;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+/* section contact us  */
+#contact-us {
+}
+.form-page {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.form-page form input:not([type='submit']) {
+	border: none;
+	outline: none;
+	font-size: 15px;
+	color: #888;
+	padding: 10px 10px 10px 0;
+	background-color: #f7f7f7;
+	border-bottom: solid 2px #ccc;
+}
+.input-name-email {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+.form-page .form .subject,
+.form-page .form .message {
+	width: 100%;
+}
+.subject input,
+.message input {
+	width: 100%;
+}
+
 @media (max-width: 1140px) {
 	.container-center.header {
 		max-width: 1000px;
 		padding: 0 20px;
 	}
 	.container-center.sections {
-		max-width: 1000px;
+		padding: 50px 20px;
 	}
 	.cards-container-default {
 		gap: 20px;
 	}
 	.cards-container-default .card-card--services {
-		border-left: solid 1px #b28756;
-		border-right: solid 1px #b28756;
+		border-left: solid 1px #555;
+		border-right: solid 1px #555;
 	}
-	.container-center.header {
-		padding: 0 20px;
-	}
+
 	.menu nav ul li a {
 		font-size: 12px;
 	}
@@ -899,5 +1031,11 @@ header {
 	.content-slider-product-type {
 		width: 100vw;
 		padding: 0 20px;
+	}
+	.contact-icons-about-work {
+		gap: 10px;
+	}
+	.form-page form > input:not(:[type='submit']) {
+		width: 100%;
 	}
 }
