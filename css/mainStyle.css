@@ -1129,6 +1129,12 @@ footer .arroy-up i {
 	.card-card--services:nth-child(3) {
 		border-left: none;
 	}
+	.container-center.sections.our-team {
+		padding: 50px 0;
+	}
+	.content-cards {
+		padding: 0 20px;
+	}
 }
 
 @media (max-width: 600px) and (min-width: 300px) {
@@ -1190,6 +1196,10 @@ footer .arroy-up i {
 	.text-format p {
 		margin-top: 15px;
 		font-size: 13px;
+	}
+
+	.content-cards {
+		padding: 0 20px;
 	}
 	.container-center.sections.products {
 		width: 100vw;
