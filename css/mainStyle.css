@@ -1238,4 +1238,7 @@ footer .arroy-up i {
 	.form-page form input:not([type='submit']) {
 		width: 100%;
 	}
+	.developer span a {
+		text-decoration: underline;
+	}
 }
