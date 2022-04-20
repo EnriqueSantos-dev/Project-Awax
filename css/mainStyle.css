@@ -1059,6 +1059,26 @@ footer .arroy-up i {
 	border-radius: 20px;
 	color: #fff;
 }
+.developer {
+	width: 100%;
+	text-align: center;
+	border-top: solid 2px #888;
+	padding: 18px;
+	color: #888;
+	text-transform: capitalize;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.developer span a {
+	text-decoration: none;
+	color: #b1b1b1;
+	cursor: pointer;
+}
+.developer span a:hover {
+	text-decoration: underline;
+}
+
 @media (max-width: 1140px) {
 	.container-center.header {
 		max-width: 1000px;
