@@ -36,7 +36,7 @@ body {
 	color: #fff;
 }
 .section-default-tittle h2.dark {
-	color: #000;
+	color: #020202;
 }
 .section-default-tittle span {
 	display: block;
@@ -246,27 +246,27 @@ header {
 .btn-mobile {
 	display: none;
 }
-
 /* section about  */
 .content-about {
 	display: flex;
 	flex: 1;
 	align-items: flex-start;
 	justify-content: center;
-	gap: 40px;
+	gap: 20px;
 	flex-wrap: wrap;
 }
 .text--about {
 	flex: 2;
+	padding-right: 20px;
 }
 .text--about p {
-	color: rgb(69, 69, 69);
+	color: #444;
 	font-size: 16px;
 	line-height: 24px;
 }
 .text--about a {
 	display: inline-block;
-	margin-top: 20px;
+	margin-top: 30px;
 	padding: 15px 60px;
 	background-color: #b28756;
 	text-decoration: none;
@@ -277,23 +277,21 @@ header {
 	border-radius: 30px;
 }
 .content-about .video-about {
-	max-width: 350px;
+	max-width: 450px;
+	height: 280px;
 	width: 100%;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 8px 15px #333;
 }
 .video-about .content-video {
 	position: relative;
-	height: 0;
-	padding: 0 0 56.25%;
+	height: 100%;
+	width: 100%;
+	aspect-ratio: 16/9;
 }
 .content-video iframe {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	border: 0;
 }
 /* section card services  */
 .card-card--services {
@@ -521,16 +519,16 @@ header {
 .socias-team ul li {
 	background-color: #999;
 	border-radius: 50%;
-	padding: 5px;
+	padding: 4px;
 	text-align: center;
 }
 .socias-team ul li a {
 	display: block;
 	cursor: pointer;
-	padding: 5px;
+	padding: 3px;
 }
 .socias-team ul li a i {
-	font-size: 24px;
+	font-size: 22px;
 	color: #fff;
 }
 .button-slider-team {
@@ -852,14 +850,20 @@ header {
 }
 
 /* section contact us  */
-#contact-us {
-}
 .form-page {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 }
+.form-page form input::placeholder {
+	text-transform: uppercase;
+	font-size: 12px;
+	margin-top: 5px;
+	font-weight: 600;
+	color: #aaa;
+}
+
 .form-page form input:not([type='submit']) {
 	border: none;
 	outline: none;
@@ -867,23 +871,180 @@ header {
 	color: #888;
 	padding: 10px 10px 10px 0;
 	background-color: #f7f7f7;
-	border-bottom: solid 2px #ccc;
+	border-bottom: solid 2px #aaa;
 }
 .input-name-email {
 	display: flex;
 	align-items: center;
 	gap: 20px;
 	flex-wrap: wrap;
+	width: 100%;
 }
-.form-page .form .subject,
-.form-page .form .message {
+.form-page form .subject {
+	margin-top: 20px;
+}
+.form-page form .message {
+	margin-top: 60px;
+}
+.form-page form .subject,
+.form-page form .message,
+.form-page form .submit {
 	width: 100%;
 }
 .subject input,
 .message input {
 	width: 100%;
 }
+.form-page form input[type='submit'] {
+	display: block;
+	margin: 50px auto 0 auto;
+	background-color: #b28756;
+	padding: 12px 30px;
+	color: #fff;
+	font-weight: 600;
+	border-radius: 20px;
+	border: none;
+	text-transform: uppercase;
+	font-size: 12px;
+}
 
+/* section mapa  */
+#mapa {
+	background-image: url(/complementos/mapa.jpg);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+}
+.information-contact {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+	background-color: #fff;
+	padding: 60px 20px 60px 40px;
+	max-width: 500px;
+	width: 100%;
+}
+
+.information-contact .info-model-contact-map a {
+	font-size: 12px;
+	color: #aaa;
+	font-weight: 600;
+	text-decoration: none;
+	text-align: center;
+}
+.information-contact .info-model-contact-map i {
+	padding: 8px;
+	background-color: #aaa;
+	border-radius: 50%;
+	font-size: 18px;
+	margin-right: 8px;
+}
+.info-model-contact-map:first-child,
+.info-model-contact-map:nth-child(2) {
+	text-transform: capitalize;
+}
+
+/* footer  */
+footer {
+	position: relative;
+}
+footer .arroy-up a {
+	position: absolute;
+	background-color: #b28756;
+	padding: 8px;
+	border-radius: 50%;
+	top: -30px;
+	left: 50px;
+	cursor: pointer;
+}
+footer .arroy-up i {
+	color: #fff;
+	text-align: center;
+	font-size: 40px;
+}
+.container-center.sections.footer {
+	padding: 30px 0;
+}
+.wrapper-footer {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.copy-and-icons-footer,
+.footer-text,
+.subscribe-footer {
+	flex: 1;
+}
+.copy-and-icons-footer {
+	display: flex;
+	flex-direction: column;
+}
+.copy-and-icons-footer .copy {
+	color: #ccc;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
+}
+.copy-and-icons-footer a {
+	display: inline-block;
+	margin-right: 5px;
+}
+.copy-and-icons-footer .icon-footer i {
+	padding: 8px;
+	border-radius: 50%;
+	background-color: #555;
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+}
+.icon-footer a:nth-child(2) i {
+	background-color: #b28756;
+}
+.footer-text {
+	color: #777;
+	line-height: 16px;
+}
+.subscribe-footer {
+	background-color: #555;
+	padding: 50px 20px;
+}
+.subscribe-footer form .form-page-2 {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.form-page-2 input[type='text'] {
+	background-color: transparent;
+	outline: none;
+	border-left: none;
+	border-top: none;
+	border-right: none;
+	border-bottom: solid 2px #999999;
+	padding-bottom: 10px;
+	color: #999999;
+	font-size: 16px;
+}
+.form-page-2 input[type='text']::placeholder {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #999999;
+	font-size: 14px;
+}
+.form-page-2 input[type='submit'] {
+	display: inline-block;
+	background-color: #b28756;
+	font-weight: 600;
+	color: #fff;
+	border: none;
+	border-radius: 20px;
+	padding: 10px 25px;
+	width: 200px;
+	margin: 0 auto;
+}
 @media (max-width: 1140px) {
 	.container-center.header {
 		max-width: 1000px;
@@ -1005,12 +1166,6 @@ header {
 	.cards-slider {
 		padding: 50px 5px;
 	}
-	.socias-team ul li {
-		padding: 1px 2px;
-	}
-	.socias-team ul li a i {
-		font-size: 20px;
-	}
 	.text-format {
 		justify-content: center;
 	}
@@ -1035,7 +1190,7 @@ header {
 	.contact-icons-about-work {
 		gap: 10px;
 	}
-	.form-page form > input:not([type='submit']) {
+	.form-page form input:not([type='submit']) {
 		width: 100%;
 	}
 }

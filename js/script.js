@@ -328,3 +328,8 @@ document.querySelectorAll('.bottons-box-price-products span').forEach(item => {
 		productTypeSliderAuto = setInterval(sliderAutoProductType, 7000);
 	});
 });
+
+// arroy up function
+document.querySelector('.arroy-up').addEventListener('click', item => {
+	window.scrollTo(window.scrollX, 0);
+});
