@@ -542,6 +542,9 @@ header {
 	left: 0;
 }
 /* happy clients */
+#happy-clients {
+	position: relative;
+}
 .model-happy {
 	display: none;
 }

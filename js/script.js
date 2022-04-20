@@ -10,10 +10,6 @@ let containerSliderWidth = document.querySelector('.slider-width'),
 	menuLinkActive = document.querySelectorAll('.menu nav ul li a'),
 	gallery = document.querySelector('.grid-gallery--pics');
 
-// fuction que reseta o scroll da página
-function scrollReset() {
-	window.scrollTo(window.scrollY, 0);
-}
 // efeito no header
 window.addEventListener('scroll', () => {
 	if (window.scrollY > 5) {
