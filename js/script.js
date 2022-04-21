@@ -331,5 +331,9 @@ document.querySelectorAll('.bottons-box-price-products span').forEach(item => {
 
 // arroy up function
 document.querySelector('.arroy-up').addEventListener('click', item => {
-	window.scrollTo(window.scrollX, 0);
+	window.scrollTo({
+		top: 0,
+		left: 0,
+		behavior: 'smooth',
+	});
 });
